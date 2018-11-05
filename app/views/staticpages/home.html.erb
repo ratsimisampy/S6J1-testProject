@@ -1,0 +1,13 @@
+<% provide(:title, 'Home') %>
+
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+		<h1>Welcome !</h1>
+		<h5 class="mt-3">Private Club </h5>
+		<% if logged_in? %>
+		<%= link_to "Members list", 'staticpages/private', class: "btn btn-dark mt-4" %>
+		<% else %>
+        <a class="btn btn-primary mt-4" href="/login">Sign in</a>
+		<% end %>
+	</div>
+</div>

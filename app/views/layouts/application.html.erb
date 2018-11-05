@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title><%= (yield(:title)) %></title>
+  <%= render 'layouts/rails_default' %>
+  </head>
+
+  <body>
+  <%= render 'layouts/header' %>
+  <%= render partial: "layouts/flash_messages", flash: flash %> 
+
+  <%= yield %>
+
+  
+  </body>
+</html>

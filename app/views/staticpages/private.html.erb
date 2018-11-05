@@ -1,0 +1,32 @@
+<% provide(:title, 'Members') %>
+
+<div class="container mt-5 mb-5">
+<% if logged_in? %>
+<h3 class="mb-5">Members :</h3>
+
+<table class="table mt-5">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Last name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+<tbody>
+<% User.all.each do |user| %>
+    <tr>
+      <th><%= user.id %></th>
+      <td><%= user.name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.email %></td>
+    </tr>
+<% end %>
+
+<% else %>
+<h3> Please sign in to see the members </h3>
+<a class="btn btn-primary mt-4" href="/login">Sign in</a>
+<% end %>
+
+</tbody>
+</table>
